@@ -37,3 +37,13 @@ La importancia del Data Masking radica en:
 -Prevención de fraudes internos: Limita el acceso a datos críticos dentro de la empresa.
 
 ## 1.4 Data Masking en Azure SQL Database 
+
+Azure ofrece una funcionalidad llamada "Dynamic Data Masking" que funciona así:
+
+-Se configuran reglas de enmascaramiento directamente en la base de datos.
+-Usuarios con privilegios especiales ven los datos completos.
+-Usuarios estándar ven solo los datos enmascarados.
+
+Ejemplo Práctico:
+
+-Un número de tarjeta de crédito "1234-5678-9012-3456" se mostraría como "XXXX-XXXX-XXXX-3456"

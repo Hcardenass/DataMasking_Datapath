@@ -51,3 +51,88 @@ Ejemplo Práctico:
 
 
 # 2.Caso Práctico
+
+## 2.1 Configura una instancia de Azure SQL Database con una tabla que contenga datos sensibles (por ejemplo, información personal de clientes).
+
+CREATE TABLE Clientes (
+    ID INT PRIMARY KEY,
+    Nombre VARCHAR(100),
+    CorreoElectronico VARCHAR(100),
+    NumeroTarjeta VARCHAR(16),
+    Salario DECIMAL(10,2)
+);
+
+INSERT INTO Clientes (ID, Nombre, CorreoElectronico, NumeroTarjeta, Salario)
+VALUES
+(1, 'Juan Pérez', 'juan.perez@email.com', '4111222233334444', 3500.50),
+(2, 'María López', 'maria.lopez@email.com', '5555666677778888', 4200.75),
+(3, 'Carlos Ramírez', 'carlos.ramirez@email.com', '1234567812345678', 5100.00),
+(4, 'Ana Torres', 'ana.torres@email.com', '9876543298765432', 2800.25),
+(5, 'Luis Fernández', 'luis.fernandez@email.com', '1111222233334444', 6000.80);
+
+
+## 2.2 Implementa Dynamic Data Masking en al menos tres columnas de la tabla, utilizando diferentes tipos de máscaras
+
+ALTER TABLE Clientes 
+ALTER COLUMN CorreoElectronico 
+ADD MASKED WITH (FUNCTION = 'email()');
+
+ALTER TABLE Clientes 
+ALTER COLUMN NumeroTarjeta 
+ADD MASKED WITH (FUNCTION = 'partial(0, "XXXX-XXXX-XXXX-", 4)');
+
+ALTER TABLE Clientes 
+ALTER COLUMN Salario 
+ADD MASKED WITH (FUNCTION = 'default()');
+
+## 2.3 Visualización de datos antes y después del enmascaramiento
+
+Crea dos usuarios con diferentes niveles de acceso:
+
+-Usuario con permisos para ver datos sin enmascarar:
+
+GRANT UNMASK TO usuario_admin;
+
+-Usuario con acceso restringido:
+
+CREATE USER usuario_limited WITHOUT LOGIN;
+GRANT SELECT ON Clientes TO usuario_limited;
+
+Se ejecuta la consulta desde ambos usuarios :
+
+SELECT * FROM Clientes;
+
+ID  | Nombre  | CorreoElectronico     | NumeroTarjeta          | Salario 
+----|--------|----------------------|------------------------|--------
+1   | Juan   | XXXX@XXXX.com         | XXXX-XXXX-XXXX-1234    | XXXX.XX
+
+Mientras que el usuario administrador verá los datos reales.
+
+## 2.4 Documentación del proceso
+
+Pasos seguidos:
+
+-Creación de Azure SQL Database.
+
+-Creación de una tabla con datos sensibles.
+
+-Aplicación de Dynamic Data Masking en columnas clave.
+
+-Creación de roles con diferentes permisos.
+
+-Pruebas de acceso y verificación de los datos enmascarados.
+
+Desafíos y soluciones:
+
+.Problema: Configuración incorrecta de permisos de usuario.
+
+.Solución: Revisar los privilegios con GRANT UNMASK y GRANT SELECT.
+
+.Problema: No se aplicaban las máscaras correctamente.
+
+.Solución: Confirmar que las columnas tengan el enmascaramiento configurado con sys.masked_columns.
+
+Reflexión sobre data masking:
+
+El Data Masking en Azure SQL Database proporciona una forma sencilla y efectiva de proteger información sensible sin afectar la estructura de la base de datos. Esto es especialmente útil en entornos de prueba, cumplimiento normativo y protección de datos de clientes. 
+Además, permite definir niveles de acceso sin comprometer la seguridad general del sistema.

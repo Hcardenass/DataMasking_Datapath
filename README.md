@@ -1,4 +1,4 @@
-# Data Masking in Azure
+# Data Masking en Azure
 
 ## 1.1 Concepto de Data Masking y explica su importancia en la seguridad de datos.
 
@@ -35,3 +35,5 @@ La importancia del Data Masking radica en:
 -Reducción de riesgos en subcontratación: Evita que terceros accedan a información confidencial.
 
 -Prevención de fraudes internos: Limita el acceso a datos críticos dentro de la empresa.
+
+## 1.4 Data Masking en Azure SQL Database 

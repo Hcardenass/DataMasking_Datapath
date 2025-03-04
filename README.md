@@ -13,3 +13,11 @@ La importancia del Data Masking radica en:
 -Uso seguro en pruebas y desarrollo: Permite a los desarrolladores trabajar con datos sin comprometer la seguridad.
 
 -Menor impacto en la producción: No afecta la estructura de la base de datos ni el rendimiento del sistema.
+
+##1.2 Tipos de Data Masking
+
+-Static Data Masking (SDM): Se aplica a una copia de la base de datos en la que los datos reales se sustituyen permanentemente por valores enmascarados. Se usa en entornos de prueba o desarrollo.
+
+-Dynamic Data Masking (DDM): Oculta los datos en tiempo real a usuarios no autorizados, mostrando versiones enmascaradas sin modificar la base de datos original.
+
+-On-the-fly Masking: Se aplica cuando los datos se mueven entre sistemas, asegurando que solo se transmitan valores enmascarados en tiempo real.

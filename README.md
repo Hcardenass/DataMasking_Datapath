@@ -64,6 +64,7 @@ CREATE TABLE Clientes (
 
 INSERT INTO Clientes (ID, Nombre, CorreoElectronico, NumeroTarjeta, Salario)
 VALUES
+
 (1, 'Juan Pérez', 'juan.perez@email.com', '4111222233334444', 3500.50),
 (2, 'María López', 'maria.lopez@email.com', '5555666677778888', 4200.75),
 (3, 'Carlos Ramírez', 'carlos.ramirez@email.com', '1234567812345678', 5100.00),

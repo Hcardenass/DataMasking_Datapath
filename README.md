@@ -1,5 +1,6 @@
 # Data Masking en Azure
 
+# 1. Investigación
 ## 1.1 Concepto de Data Masking y explica su importancia en la seguridad de datos.
 
 Data Masking es una técnica de seguridad que oculta datos sensibles mediante la sustitución, modificación o enmascaramiento de la información real con valores ficticios pero realistas. Su objetivo es proteger datos confidenciales en entornos donde no se requiere el acceso a la información original, como en pruebas de software, análisis de datos o entrenamiento de personal.
@@ -47,3 +48,6 @@ Azure ofrece una funcionalidad llamada "Dynamic Data Masking" que funciona así:
 Ejemplo Práctico:
 
 -Un número de tarjeta de crédito "1234-5678-9012-3456" se mostraría como "XXXX-XXXX-XXXX-3456"
+
+
+# 2.Caso Práctico

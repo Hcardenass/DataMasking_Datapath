@@ -25,3 +25,13 @@ La importancia del Data Masking radica en:
 -Enmascaramiento Aleatorio: Este método reemplaza los datos originales con valores generados aleatoriamente que siguen el mismo formato y tipo de dato.
 
 ## 1.3 Aplicaciones comunes de Data Masking en empresas.
+
+-Protección de datos en pruebas y desarrollo: Permite a los desarrolladores trabajar con datos realistas sin acceder a información sensible.
+
+-Cumplimiento normativo: Ayuda a cumplir con leyes de privacidad y seguridad de datos.
+
+-Seguridad en análisis de datos: Permite compartir información con analistas sin exponer datos sensibles.
+
+-Reducción de riesgos en subcontratación: Evita que terceros accedan a información confidencial.
+
+-Prevención de fraudes internos: Limita el acceso a datos críticos dentro de la empresa.

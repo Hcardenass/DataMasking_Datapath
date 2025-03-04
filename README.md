@@ -104,9 +104,22 @@ SELECT * FROM Clientes;
 
 ID  | Nombre  | CorreoElectronico     | NumeroTarjeta          | Salario 
 ----|--------|----------------------|------------------------|--------
-1   | Juan   | XXXX@XXXX.com         | XXXX-XXXX-XXXX-1234    | XXXX.XX
+1   | Juan   | XXXX@XXXX.com         | XXXX-XXXX-XXXX-4444    | XXXX.XX
+2   | María  | XXXX@XXXX.com         | XXXX-XXXX-XXXX-8888    | XXXX.XX
+3   | Carlos | XXXX@XXXX.com         | XXXX-XXXX-XXXX-5678    | XXXX.XX
+4   | Ana    | XXXX@XXXX.com         | XXXX-XXXX-XXXX-5432    | XXXX.XX
+5   | Luis   | XXXX@XXXX.com         | XXXX-XXXX-XXXX-4444    | XXXX.XX
 
 Mientras que el usuario administrador verá los datos reales.
+
+ID  | Nombre  | CorreoElectronico         | NumeroTarjeta          | Salario  
+----|--------|--------------------------|------------------------|--------
+1   | Juan   | juan.perez@email.com      | 4111-2222-3333-4444    | 3500.50  
+2   | María  | maria.lopez@email.com     | 5555-6666-7777-8888    | 4200.75  
+3   | Carlos | carlos.ramirez@email.com  | 1234-5678-1234-5678    | 5100.00  
+4   | Ana    | ana.torres@email.com      | 9876-5432-9876-5432    | 2800.25  
+5   | Luis   | luis.fernandez@email.com  | 1111-2222-3333-4444    | 6000.80  
+
 
 ## 2.4 Documentación del proceso
 
